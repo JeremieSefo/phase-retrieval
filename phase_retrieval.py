@@ -45,7 +45,7 @@ def fienup_phase_retrieval(mag, mask=None, beta=0.8,
     assert mag.shape == mask.shape, 'mask and mag must have same shape'
     
     # sample random phase and initialize image x 
-    y_hat =(mag) *np.exp(1j*2*np.pi*np.random.rand(*mag.shape))
+    y_hat =(mag + 0.) *np.exp(1j*2*np.pi*np.random.rand(*mag.shape)) #0.000000000000001 * np.abs(np.random.rand(*mag.shape))
 
     # rand =  np.abs(np.random.rand(*mag.shape))
     # rand = rand / np.linalg.norm(rand)
