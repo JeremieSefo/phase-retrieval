@@ -67,8 +67,8 @@ def fienup_phase_retrieval(mag, mask=None, beta=0.8,
         if i % 100 == 0 and verbose: 
             print("step", i, "of", steps)
         
-        # inverse fourier transform
-        y = np.real(np.fft.ifft2(y_hat))
+        # inverse fourier transform and enforce real values 
+        y = np.real(np.fft.ifft2(y_hat)) #np.real
         
         # previous iterate
         if x_p is None:
